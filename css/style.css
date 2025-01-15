@@ -1,67 +1,96 @@
-/* Reset all margins, paddings, and box-sizing */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Styles */
+/* Body and Page Layout */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f0f0f5;
-    color: #333;
-    margin: 0;
-    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    padding: 15px 30px;
+    background-color: #007bff; /* Blue background for the navbar */
 }
 
-h1 {
-    color: #007bff;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Table Styles */
-table {
-    width: 80%;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #007bff;
+.navbar .logo a {
     color: white;
+    font-size: 24px;
+    text-decoration: none;
     font-weight: 600;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
 }
 
-tr:hover {
-    background-color: #eaf1ff;
+.navbar .nav-links li {
+    margin: 0 15px;
 }
 
-/* Footer Styles */
-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #888;
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    color: #f0f0f5; /* Light color when hovering over links */
+}
+
+/* Hamburger Icon (visible on smaller screens) */
+.navbar .hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #007bff; /* Same background for the dropdown menu */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+    }
+
+    .navbar .nav-links li {
+        margin: 15px 0;
+    }
+
+    .navbar .hamburger {
+        display: block;
+    }
+
+    .navbar.active .nav-links {
+        display: block;
+    }
+}
+
+/* Content Styling */
+.content {
+    padding: 50px;
+    text-align: center;
+}
+
+.content h1 {
+    color: #333;
+}
+
+img{
+    width: 100px;
 }
